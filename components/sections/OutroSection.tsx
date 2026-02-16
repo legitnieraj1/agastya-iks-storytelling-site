@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function OutroSection() {
   return (
@@ -76,6 +77,41 @@ export default function OutroSection() {
           The Sage Who Balanced the World
         </motion.p>
       </motion.div>
+
+      {/* Footer Credits */}
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 3, duration: 1 }}
+        viewport={{ once: true }}
+        className="relative z-10 mt-20 pb-8 text-center"
+      >
+        <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-sacred-gold/30 to-transparent mb-6" />
+
+        <p className="text-sacred-white/50 font-body text-xs tracking-wide mb-3">
+          Designed and powered by{' '}
+          <span className="text-sacred-gold/80 font-semibold">NIERAJ S</span>
+        </p>
+
+        <a
+          href="https://elevexsocials.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mb-4 opacity-70 hover:opacity-100 transition-opacity duration-300"
+        >
+          <Image
+            src="/ELEVEXSOCIALS.png"
+            alt="ElevexSocials"
+            width={100}
+            height={28}
+            className="mx-auto"
+          />
+        </a>
+
+        <p className="text-sacred-white/35 font-body text-[11px] tracking-widest uppercase">
+          Team — Jayasurya — Credits
+        </p>
+      </motion.footer>
     </section>
   );
 }
